@@ -1,0 +1,47 @@
+$primary-color: #6AB8FD;
+$text-color: #FFF;
+$bg-color: #3c4962;
+$box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+
+
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+.sidebar {
+    height: 100vh;
+    background-color: $bg-color;
+    box-shadow: $box-shadow;  
+    padding: 10px;
+    position: fixed;
+}
+
+.sidebar-items {
+    padding-top: 60px;
+    gap: 8px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar-item {
+    padding: 15px;
+    border-radius: 5px;
+    color: $text-color;
+
+    i {
+        font-size: 20px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        width: 100%;
+    }
+
+    &:hover {
+        background-color: $primary-color;
+        cursor: pointer;
+    }
+}
