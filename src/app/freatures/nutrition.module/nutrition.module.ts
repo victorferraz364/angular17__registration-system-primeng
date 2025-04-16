@@ -1,16 +1,24 @@
 import { NgModule } from "@angular/core";
 import { NutritionPageComponent } from "./pages/nutrition.page/nutrition.page.component";
 import { TableTestComponent } from "../../tests/table-test/table-test.component";
+import { FeedRecordTableComponent } from "./pages/nutrition.page/components/feed-record-table/feed-record-table.component";
+import { PrimeNgModule } from "../../shared/prime-ng/prime-ng.module";
+import { CommonModule, DatePipe } from "@angular/common";
 
 @NgModule({
     imports:[
-        TableTestComponent
+        TableTestComponent,
+        PrimeNgModule,
+        DatePipe,
+        CommonModule
     ],
     declarations:[
-        NutritionPageComponent
+        NutritionPageComponent,
+        FeedRecordTableComponent
     ],
     exports:[
-        NutritionPageComponent
+        NutritionPageComponent,
+        FeedRecordTableComponent
     ]
 })
 export class NutritionModule {

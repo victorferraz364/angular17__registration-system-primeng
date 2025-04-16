@@ -1,0 +1,26 @@
+<div class="card">
+    <p-table [value]="data" [tableStyle]="{ 'min-width': '60rem' }">
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th *ngFor="let col of colums" pSortableColumn="{{ col.field }}">
+                    {{ col.header }}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+
+
+        <ng-template pTemplate="body" let-rowData>
+            <tr>
+                <td *ngFor="let col of colums">
+
+                    <ng-container [ngSwitch]="col.field">
+                        <span *ngSwitchCase="'datahora'">{{ rowData[col.field] | date: 'HH:mm' }}</span>
+                        <span *ngSwitchDefault>{{ rowData[col.field] }}</span>
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
