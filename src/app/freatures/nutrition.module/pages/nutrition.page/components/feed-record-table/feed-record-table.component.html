@@ -1,26 +1,28 @@
 <div class="card">
-    <p-table [value]="data" [tableStyle]="{ 'min-width': '60rem' }">
-
-        <ng-template pTemplate="header">
-            <tr>
-                <th *ngFor="let col of colums" pSortableColumn="{{ col.field }}">
-                    {{ col.header }}
-                    <p-sortIcon [field]="col.field"></p-sortIcon>
-                </th>
-            </tr>
-        </ng-template>
-
-
-        <ng-template pTemplate="body" let-rowData>
-            <tr>
-                <td *ngFor="let col of colums">
-
-                    <ng-container [ngSwitch]="col.field">
-                        <span *ngSwitchCase="'datahora'">{{ rowData[col.field] | date: 'HH:mm' }}</span>
-                        <span *ngSwitchDefault>{{ rowData[col.field] }}</span>
-                    </ng-container>
-                </td>
-            </tr>
-        </ng-template>
+    <p-table #dt [value]="dados" [customSort]="true" (sortFunction)="customSort($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="alimento">
+            Alimento <p-sortIcon field="alimento" />
+          </th>
+          <th pSortableColumn="quantidade">
+            Quantidade <p-sortIcon field="quantidade" />
+          </th>
+          <th pSortableColumn="calorias">
+            Calorias <p-sortIcon field="calorias" />
+          </th>
+          <th pSortableColumn="datahora">
+            Data/Hora <p-sortIcon field="datahora" />
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-row>
+        <tr>
+          <td>{{ row.alimento }}</td>
+          <td>{{ row.quantidade }}</td>
+          <td>{{ row.calorias }}</td>
+          <td>{{ row.datahora | date: 'short' }}</td>
+        </tr>
+      </ng-template>
     </p-table>
-</div>
+  </div>
