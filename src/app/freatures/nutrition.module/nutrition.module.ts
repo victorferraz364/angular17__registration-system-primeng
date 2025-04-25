@@ -6,21 +6,25 @@ import { PrimeNgModule } from "../../shared/prime-ng/prime-ng.module";
 import { CommonModule, DatePipe } from "@angular/common";
 import { FeedRecordDialogComponent } from "./pages/nutrition.page/components/feed-record-dialog/feed-record-dialog.component";
 
+
 @NgModule({
     imports:[
         TableTestComponent,
         PrimeNgModule,
         DatePipe,
         CommonModule,
-        FeedRecordDialogComponent
+
     ],
     declarations:[
         NutritionPageComponent,
-        FeedRecordTableComponent
+        FeedRecordTableComponent,
+        FeedRecordDialogComponent
     ],
     exports:[
         NutritionPageComponent,
-        FeedRecordTableComponent
+        FeedRecordTableComponent, 
+        FeedRecordDialogComponent
+      
     ]
 })
 export class NutritionModule {
