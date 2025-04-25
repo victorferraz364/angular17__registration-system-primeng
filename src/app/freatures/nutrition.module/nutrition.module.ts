@@ -4,13 +4,15 @@ import { TableTestComponent } from "../../tests/table-test/table-test.component"
 import { FeedRecordTableComponent } from "./pages/nutrition.page/components/feed-record-table/feed-record-table.component";
 import { PrimeNgModule } from "../../shared/prime-ng/prime-ng.module";
 import { CommonModule, DatePipe } from "@angular/common";
+import { FeedRecordDialogComponent } from "./pages/nutrition.page/components/feed-record-dialog/feed-record-dialog.component";
 
 @NgModule({
     imports:[
         TableTestComponent,
         PrimeNgModule,
         DatePipe,
-        CommonModule
+        CommonModule,
+        FeedRecordDialogComponent
     ],
     declarations:[
         NutritionPageComponent,
