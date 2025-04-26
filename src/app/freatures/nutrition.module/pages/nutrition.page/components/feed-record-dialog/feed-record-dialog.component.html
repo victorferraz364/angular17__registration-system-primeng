@@ -1,5 +1,5 @@
 <div class="card flex justify-content-center">
-    <p-button (onClick)="showDialog()" label="Show" />
+    <p-button (onClick)="showDialog()" label="Nova Refeição" />
     <p-dialog header="adicionar refeição" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
         <div class="flex align-items-center gap-3 mb-3">
             <label for="alimento" class="font-semibold w-6rem">Alimento</label>
@@ -15,7 +15,6 @@
                 inputId="horario" 
                 [(ngModel)]="time" 
                 [timeOnly]="true"
-                [showTime]="true"
                 [inline]="true"
                 [hourFormat]="'24'"
                 styleClass="custom-timepicker"/>
