@@ -5,6 +5,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AvatarModule } from 'primeng/avatar';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
 
 
 
@@ -15,7 +16,8 @@ import { ButtonModule } from 'primeng/button';
         FormsModule,
         DialogModule,
         InputTextModule,
-        AvatarModule
+        AvatarModule,
+        CalendarModule
         
     ],
     exports: [
@@ -24,7 +26,8 @@ import { ButtonModule } from 'primeng/button';
         FormsModule,
         DialogModule,
         InputTextModule,
-        AvatarModule
+        AvatarModule,
+        CalendarModule
     ],
     declarations: [
 

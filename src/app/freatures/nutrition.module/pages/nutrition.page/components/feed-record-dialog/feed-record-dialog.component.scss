@@ -1,0 +1,23 @@
+::ng-deep .custom-timepicker {
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+  
+  ::ng-deep .custom-timepicker .p-datepicker {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  ::ng-deep .custom-timepicker .p-timepicker {
+    background: transparent !important;
+  }
+  
+  ::ng-deep .custom-timepicker .p-timepicker > div {
+    background: transparent !important;
+  }
+  
+  ::ng-deep .custom-timepicker .p-timepicker button {
+    background: transparent !important;
+  }

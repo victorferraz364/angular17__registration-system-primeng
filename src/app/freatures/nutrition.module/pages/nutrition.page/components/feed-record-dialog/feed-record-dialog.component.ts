@@ -12,4 +12,6 @@ export class FeedRecordDialogComponent {
   showDialog() {
       this.visible = true;
   }
+
+  time: Date[] | undefined;
 }

@@ -1,16 +1,31 @@
-<p-button (click)="showDialog()" label="Show" />
-<p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
-    <span class="p-text-secondary block mb-8">Update your information.</span>
-    <div class="flex items-center gap-4 mb-4">
-        <label for="username" class="font-semibold w-24">Username</label>
-        <input pInputText id="username" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex items-center gap-4 mb-8">
-        <label for="email" class="font-semibold w-24">Email</label>
-        <input pInputText id="email" class="flex-auto" autocomplete="off" />
-    </div>
-    <div class="flex justify-end gap-2">
-        <p-button label="Cancel" severity="secondary" (click)="visible = false" />
-        <p-button label="Save" (click)="visible = false" />
-    </div>
-</p-dialog>
+<div class="card flex justify-content-center">
+    <p-button (onClick)="showDialog()" label="Show" />
+    <p-dialog header="adicionar refeição" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="alimento" class="font-semibold w-6rem">Alimento</label>
+            <input pInputText id="alimento" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="calorias" class="font-semibold w-6rem">Calorias</label>
+            <input pInputText id="calorias" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-5">
+            <label for="horario" class="font-semibold w-6rem">Horario</label>
+            <p-calendar 
+                inputId="horario" 
+                [(ngModel)]="time" 
+                [timeOnly]="true"
+                [showTime]="true"
+                [inline]="true"
+                [hourFormat]="'24'"
+                styleClass="custom-timepicker"/>
+        </div>
+
+        
+        
+        <div class="flex justify-content-end gap-2">
+            <p-button label="Cancelar" severity="secondary" (onClick)="visible = false" />
+            <p-button label="adicionar" (onClick)="visible = false" />
+        </div>
+    </p-dialog>
+</div>
