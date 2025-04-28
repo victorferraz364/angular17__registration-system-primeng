@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
-import { NutritionPageComponent } from "./pages/nutrition.page/nutrition.page.component";
+import { NutritionPageComponent } from "./nutrition.page.component";
 import { TableTestComponent } from "../../tests/table-test/table-test.component";
-import { FeedRecordTableComponent } from "./pages/nutrition.page/components/feed-record-table/feed-record-table.component";
+import { FeedRecordTableComponent } from "./components/feed-record-table/feed-record-table.component";
 import { PrimeNgModule } from "../../shared/prime-ng/prime-ng.module";
 import { CommonModule, DatePipe } from "@angular/common";
-import { FeedRecordDialogComponent } from "./pages/nutrition.page/components/feed-record-dialog/feed-record-dialog.component";
+import { FeedRecordDialogComponent } from "./components/feed-record-dialog/feed-record-dialog.component";
 
 
 @NgModule({

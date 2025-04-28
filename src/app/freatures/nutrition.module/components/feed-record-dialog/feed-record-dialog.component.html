@@ -2,18 +2,18 @@
     <p-button (onClick)="showDialog()" label="Nova Refeição" />
     <p-dialog header="adicionar refeição" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
         <div class="flex align-items-center gap-3 mb-3">
-            <label for="alimento" class="font-semibold w-6rem">Alimento</label>
-            <input pInputText id="alimento" class="flex-auto" autocomplete="off" />
+            <label  for="alimento" class="font-semibold w-6rem">Alimento</label>
+            <input [(ngModel)]="alimento" pInputText id="alimento" class="flex-auto" autocomplete="off" />
         </div>
         <div class="flex align-items-center gap-3 mb-3">
             <label for="calorias" class="font-semibold w-6rem">Calorias</label>
-            <input pInputText id="calorias" class="flex-auto" autocomplete="off" />
+            <input [(ngModel)]="calorias" pInputText id="calorias" class="flex-auto" autocomplete="off" />
         </div>
         <div class="flex align-items-center gap-3 mb-5">
-            <label for="horario" class="font-semibold w-6rem">Horario</label>
+            <label for="horario" class="font-semibold w-6rem" >Horario</label>
             <p-calendar 
                 inputId="horario" 
-                [(ngModel)]="time" 
+                [(ngModel)]="horario" 
                 [timeOnly]="true"
                 [inline]="true"
                 [hourFormat]="'24'"
@@ -24,7 +24,7 @@
         
         <div class="flex justify-content-end gap-2">
             <p-button label="Cancelar" severity="secondary" (onClick)="visible = false" />
-            <p-button label="adicionar" (onClick)="visible = false" />
+            <p-button label="adicionar" (onClick)="adicionarRefeicao()" (onClick)="visible = false" />
         </div>
     </p-dialog>
 </div>
