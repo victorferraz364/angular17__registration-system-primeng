@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ELEMENTDATA } from '../../constants/ELEMENT-DATA';
-import { PeriodicElement } from '../../interfaces/periodic-elements.interface';
+import { Meals } from '../../interfaces/meals';
 import { Table } from 'primeng/table';
 import { SortEvent } from 'primeng/api';
 
@@ -14,10 +14,10 @@ export class FeedRecordTableComponent implements OnInit {
       throw new Error('Method not implemented.');
     }
  
-    @Input() dados: PeriodicElement[] = []; 
+    @Input() dados: Meals[] = []; 
     @ViewChild('dt') dt!: Table;
   
-    initialValue: PeriodicElement[] = [];
+    initialValue: Meals[] = [];
     sortState: boolean | null = null;
   
     ngOnChanges() {

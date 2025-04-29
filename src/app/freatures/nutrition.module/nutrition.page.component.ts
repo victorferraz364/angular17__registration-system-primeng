@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ELEMENTDATA } from './constants/ELEMENT-DATA';
-import { PeriodicElement } from './interfaces/periodic-elements.interface';
+import { Meals } from './interfaces/meals';
 
 @Component({
   selector: 'nutrition-page',
@@ -8,13 +8,13 @@ import { PeriodicElement } from './interfaces/periodic-elements.interface';
   styleUrls: ['./nutrition.page.component.scss']
 })
 export class NutritionPageComponent implements OnInit {
-  dadosTabela: PeriodicElement[] = [];
+  dadosTabela: Meals[] = [];
 
   ngOnInit() {
     this.dadosTabela = [...ELEMENTDATA]; 
   }
 
-  adicionarRefeicaoNaTabela(refeicao: PeriodicElement) {
+  adicionarRefeicaoNaTabela(refeicao: Meals) {
     this.dadosTabela = [...this.dadosTabela, refeicao];
   }
 

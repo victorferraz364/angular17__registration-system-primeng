@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { PeriodicElement } from '../../interfaces/periodic-elements.interface';
+import { Meals } from '../../interfaces/meals';
 
 
 @Component({

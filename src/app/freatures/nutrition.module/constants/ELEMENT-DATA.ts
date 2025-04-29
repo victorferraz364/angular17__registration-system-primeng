@@ -1,6 +1,6 @@
-import { PeriodicElement } from "../interfaces/periodic-elements.interface";
+import { Meals } from "../interfaces/meals";
 
-export const ELEMENTDATA: PeriodicElement[] = [
+export const ELEMENTDATA: Meals[] = [
   
     {alimento: 'pão de francês', quantidade: 4, calorias: 400, datahora: new Date("2023-08-01T09:00:00.000Z")},
     {alimento: 'leite', quantidade: 200, calorias: 180, datahora: new Date("2023-08-01T09:00:00.000Z")},

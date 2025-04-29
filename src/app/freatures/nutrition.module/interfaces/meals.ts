@@ -1,6 +1,6 @@
 import { Data } from "@angular/router";
 
-export interface PeriodicElement {
+export interface Meals {
   alimento: string;
   quantidade: number;
   calorias: number;
