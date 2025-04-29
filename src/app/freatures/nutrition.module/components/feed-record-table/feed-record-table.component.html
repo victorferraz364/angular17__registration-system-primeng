@@ -6,26 +6,26 @@
     <p-table #dt [value]="dados" [customSort]="true" (sortFunction)="customSort($event)">
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="alimento">
-            Alimento <p-sortIcon field="alimento" />
+          <th pSortableColumn="food">
+            Food <p-sortIcon field="food" />
           </th>
-          <th pSortableColumn="quantidade">
-            Quantidade <p-sortIcon field="quantidade" />
+          <th pSortableColumn="quantity">
+            Quantidade <p-sortIcon field="quantity" />
           </th>
-          <th pSortableColumn="calorias">
-            Calorias <p-sortIcon field="calorias" />
+          <th pSortableColumn="calories">
+            Calorias <p-sortIcon field="calories" />
           </th>
-          <th pSortableColumn="datahora">
-            Data/Hora <p-sortIcon field="datahora" />
+          <th pSortableColumn="registrationDate">
+            Data/Hora <p-sortIcon field="registrationDate" />
           </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-row>
         <tr>
-          <td>{{ row.alimento }}</td>
-          <td>{{ row.quantidade }}</td>
-          <td>{{ row.calorias }}</td>
-          <td>{{ row.datahora | date: 'short' }}</td>
+          <td>{{ row.food }}</td>
+          <td>{{ row.quantity }}</td>
+          <td>{{ row.calories }}</td>
+          <td>{{ row.registrationDate | date: 'short' }}</td>
         </tr>
       </ng-template>
     </p-table>

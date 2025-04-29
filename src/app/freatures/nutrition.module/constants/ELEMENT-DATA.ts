@@ -1,11 +1,11 @@
-import { Meals } from "../interfaces/meals";
+import { Meals } from "../interfaces/IMeals";
 
 export const ELEMENTDATA: Meals[] = [
   
-    {alimento: 'pão de francês', quantidade: 4, calorias: 400, datahora: new Date("2023-08-01T09:00:00.000Z")},
-    {alimento: 'leite', quantidade: 200, calorias: 180, datahora: new Date("2023-08-01T09:00:00.000Z")},
-    {alimento: 'ovo', quantidade: 4, calorias: 600, datahora: new Date("2023-08-01T09:00:00.000Z")},
-    {alimento: 'bolacha rosquinha', quantidade: 8, calorias: 100, datahora: new Date("2023-08-01T09:00:00.000Z")},
+    {food: 'pão de francês', quantity: 4, calories: 400, registrationDate: new Date("2023-08-01T09:00:00.000Z")},
+    {food: 'leite', quantity: 200, calories: 180, registrationDate: new Date("2023-08-01T09:00:00.000Z")},
+    {food: 'ovo', quantity: 4, calories: 600, registrationDate: new Date("2023-08-01T09:00:00.000Z")},
+    {food: 'bolacha rosquinha', quantity: 8, calories: 100, registrationDate: new Date("2023-08-01T09:00:00.000Z")},
     
 
   ];

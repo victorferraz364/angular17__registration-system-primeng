@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Meals } from '../../interfaces/meals';
+import { Meals } from '../../interfaces/IMeals';
 
 
 @Component({

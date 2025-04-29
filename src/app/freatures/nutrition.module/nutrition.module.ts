@@ -5,6 +5,7 @@ import { FeedRecordTableComponent } from "./components/feed-record-table/feed-re
 import { PrimeNgModule } from "../../shared/prime-ng/prime-ng.module";
 import { CommonModule, DatePipe } from "@angular/common";
 import { FeedRecordDialogComponent } from "./components/feed-record-dialog/feed-record-dialog.component";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { FeedRecordDialogComponent } from "./components/feed-record-dialog/feed-
         PrimeNgModule,
         DatePipe,
         CommonModule,
+        HttpClientModule
 
     ],
     declarations:[

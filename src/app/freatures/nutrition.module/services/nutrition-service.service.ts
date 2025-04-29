@@ -1,23 +1,23 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { PeriodicElement } from '../interfaces/meals';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
+import { Meals } from '../interfaces/IMeals'
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class NutritionService {
 
-  
-  private readonly API_URL = 'http://localhost:8080/meals'; 
 
-  constructor(private http: HttpClient) {}
 
-  getRefeicoes(): Observable<PeriodicElement[]> {
-    return this.http.get<PeriodicElement[]>(this.API_URL);
+   private url = environment.apiUrl;
+
+  constructor(private httpClient: HttpClient) { }
+
+  getAllMeals() {
+    return this.httpClient.get<Meals[]>(`${environment.apiUrl}/meals`);
   }
-
-  adicionarRefeicao(refeicao: PeriodicElement): Observable<PeriodicElement> {
-    return this.http.post<PeriodicElement>(this.API_URL, refeicao);
-  }
+ 
 }
