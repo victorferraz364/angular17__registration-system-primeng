@@ -9,7 +9,7 @@ import { NutritionService } from './services/nutrition-service.service';
   templateUrl: './nutrition.page.component.html',
   styleUrls: ['./nutrition.page.component.scss']
 })
-export class NutritionPageComponent  {
+export class NutritionPageComponent {
   dadosTabela: Meals[] = [];
 
 
@@ -35,6 +35,10 @@ export class NutritionPageComponent  {
     });
   }
   
+
+  adicionarRefeicaoNaTabela(refeicao: Meals) {
+    this.dadosTabela = [...this.dadosTabela, refeicao];
+  }
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Meals } from '../../interfaces/IMeals';
+import { NutritionService } from '../../services/nutrition-service.service';
 
 
 @Component({
@@ -8,6 +9,9 @@ import { Meals } from '../../interfaces/IMeals';
   styleUrl: './feed-record-dialog.component.scss'
 })
 export class FeedRecordDialogComponent {
+
+  constructor(private nutritionService: NutritionService) {}
+
   visible: boolean = false;
 
   showDialog() {
@@ -16,22 +20,27 @@ export class FeedRecordDialogComponent {
 
   @Output() novaRefeicao = new EventEmitter<any>();
 
-  alimento: string = '';
-  calorias: number = 0;
-  horario: Date | null = null;
+  refeicao: Meals = {
+    food: '',
+    quantity: 0,
+    calories: 0,
+    registrationDate: new Date()
+  };
 
-  adicionarRefeicao() {
-
-    if (this.alimento && this.calorias && this.horario) {
-      
-      const novaRefeicao = {
-        alimento: this.alimento,
-        quantidade: 1, 
-        calorias: this.calorias,
-        datahora: this.horario
-      };
-
-    this.novaRefeicao.emit(novaRefeicao); 
+  salvarRefeicao() {
+    this.nutritionService.addMeal(this.refeicao).subscribe({
+      next: (novaRefeicaoDaAPI) => {
+        this.novaRefeicao.emit(novaRefeicaoDaAPI); 
+        this.refeicao = {
+          food: '',
+          quantity: 0,
+          calories: 0,
+          registrationDate: new Date()
+        };
+      },
+      error: (err) => {
+        console.error('Erro ao salvar refeição:', err);
+      }
+    });
   }
-}
 }

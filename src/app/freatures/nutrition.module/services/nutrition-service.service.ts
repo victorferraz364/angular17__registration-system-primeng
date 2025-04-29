@@ -20,4 +20,8 @@ export class NutritionService {
     return this.httpClient.get<Meals[]>(`${environment.apiUrl}/meals`);
   }
  
+  addMeal(meal: Meals) {
+    return this.httpClient.post<Meals>(`${this.url}/meals`, meal);
+  }
+
 }
