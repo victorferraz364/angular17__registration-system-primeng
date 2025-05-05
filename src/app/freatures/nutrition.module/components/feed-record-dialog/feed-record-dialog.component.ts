@@ -18,7 +18,7 @@ export class FeedRecordDialogComponent {
     this.visible = true;
   }
 
-  @Output() novaRefeicao = new EventEmitter<any>();
+  @Output() newMeal = new EventEmitter<any>();
 
   refeicao: Meals = {
     food: '',
@@ -30,7 +30,7 @@ export class FeedRecordDialogComponent {
   salvarRefeicao() {
     this.nutritionService.addMeal(this.refeicao).subscribe({
       next: (novaRefeicaoDaAPI) => {
-        this.novaRefeicao.emit(novaRefeicaoDaAPI); 
+        this.newMeal.emit(novaRefeicaoDaAPI); 
         this.refeicao = {
           food: '',
           quantity: 0,

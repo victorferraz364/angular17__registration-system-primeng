@@ -10,7 +10,7 @@ import { NutritionService } from './services/nutrition-service.service';
   styleUrls: ['./nutrition.page.component.scss']
 })
 export class NutritionPageComponent {
-  dadosTabela: Meals[] = [];
+  tableData: Meals[] = [];
 
   constructor(private nutritionService: NutritionService) {}
 
@@ -21,7 +21,7 @@ export class NutritionPageComponent {
   getMeals() {
     this.nutritionService.getAllMeals().subscribe({
       next: meals => {
-        this.dadosTabela = meals;
+        this.tableData = meals;
         console.log('Dados recebidos da API:', meals);
       },
       error: err => {
@@ -30,7 +30,7 @@ export class NutritionPageComponent {
     });
   }
 
-  adicionarRefeicaoNaTabela(refeicao: Meals) {
-    this.dadosTabela = [...this.dadosTabela, refeicao];
+  addMealToTable(meal: Meals) {
+    this.tableData = [...this.tableData, meal];
   }
 }

@@ -10,7 +10,7 @@ import { SortEvent } from 'primeng/api';
 })
 export class FeedRecordTableComponent implements OnChanges {
   
-  @Input() dados: Meals[] = [];
+  @Input() mealData: Meals[] = [];
   @ViewChild('dt') dt!: Table;
 
   initialValue: Meals[] = [];
@@ -19,7 +19,7 @@ export class FeedRecordTableComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['dados']) {
-      this.initialValue = [...this.dados];
+      this.initialValue = [...this.mealData];
     }
   }
 
@@ -39,7 +39,7 @@ export class FeedRecordTableComponent implements OnChanges {
       this.sortTableData(event, -1);
     } else {
       this.sortState = null;
-      this.dados = [...this.initialValue];
+      this.mealData = [...this.initialValue];
       this.dt.reset();
     }
   }
@@ -48,7 +48,7 @@ export class FeedRecordTableComponent implements OnChanges {
     const field = event.field;
     if (!field) return;
 
-    this.dados.sort((a: any, b: any) => {
+    this.mealData.sort((a: any, b: any) => {
       const val1 = a[field];
       const val2 = b[field];
 

@@ -1,10 +1,10 @@
 <div class="container">
   <div class="container__header">
 
-    <feed-record-dialog (novaRefeicao)="adicionarRefeicaoNaTabela($event)"></feed-record-dialog>
+    <feed-record-dialog (newMeal)="addMealToTable($event)"></feed-record-dialog>
   </div>
 
   <div class="container-table">
-    <feed-record-table [dados]="dadosTabela"></feed-record-table>
+    <feed-record-table [mealData]="tableData"></feed-record-table>
   </div>
 </div>
