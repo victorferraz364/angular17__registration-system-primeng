@@ -31,5 +31,6 @@ export class AppComponent implements OnInit {
       tooltip: 1100   // tooltip
     };
     this.primengConfig.ripple = true;
+    this.primengConfig.csp.set({nonce: '...'});
   }
 }

@@ -10,8 +10,6 @@ import { Meals } from '../interfaces/IMeals'
 })
 export class NutritionService {
 
-
-
    private url = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) { }

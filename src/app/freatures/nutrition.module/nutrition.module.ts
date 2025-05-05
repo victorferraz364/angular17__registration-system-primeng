@@ -6,6 +6,7 @@ import { PrimeNgModule } from "../../shared/prime-ng/prime-ng.module";
 import { CommonModule, DatePipe } from "@angular/common";
 import { FeedRecordDialogComponent } from "./components/feed-record-dialog/feed-record-dialog.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from "@angular/common/http";
         PrimeNgModule,
         DatePipe,
         CommonModule,
-        HttpClientModule
+        HttpClientModule,
+        ButtonModule
 
     ],
     declarations:[
@@ -25,7 +27,8 @@ import { HttpClientModule } from "@angular/common/http";
     exports:[
         NutritionPageComponent,
         FeedRecordTableComponent, 
-        FeedRecordDialogComponent
+        FeedRecordDialogComponent,
+        ButtonModule
       
     ]
 })

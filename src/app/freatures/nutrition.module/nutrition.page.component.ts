@@ -12,15 +12,10 @@ import { NutritionService } from './services/nutrition-service.service';
 export class NutritionPageComponent {
   dadosTabela: Meals[] = [];
 
+  constructor(private nutritionService: NutritionService) {}
 
- 
-
-  constructor(private nutritionService: NutritionService) {
-   
-    this.nutritionService.getAllMeals().subscribe(teste => {
-      this.dadosTabela = teste;
-      console.log('Dados recebidos da API:', this.dadosTabela);
-    });
+  ngOnInit() {
+    this.getMeals();
   }
 
   getMeals() {
@@ -30,15 +25,12 @@ export class NutritionPageComponent {
         console.log('Dados recebidos da API:', meals);
       },
       error: err => {
-        console.error('Erro ao carregar refeições:', err);
+        console.error('Erro ao carregar os dados:', err);
       }
     });
   }
-  
 
   adicionarRefeicaoNaTabela(refeicao: Meals) {
     this.dadosTabela = [...this.dadosTabela, refeicao];
   }
-
-
 }
