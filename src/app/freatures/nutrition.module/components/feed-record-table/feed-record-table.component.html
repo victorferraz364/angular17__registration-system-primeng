@@ -1,11 +1,11 @@
 <div class="card flex justify-content-center">
 
+<delete-button [selectedMeals]="selectedMeals"></delete-button>
   
-<div class="card">
- 
-    <p-table #dt [value]="dados" [customSort]="true" (sortFunction)="customSort($event)">
+    <p-table  [(selection)]="selectedMeals"  #dt [value]="dados" [customSort]="true" (sortFunction)="customSort($event)">
       <ng-template pTemplate="header">
         <tr>
+          <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
           <th pSortableColumn="food">
             Alimento <p-sortIcon field="food" />
           </th>
@@ -23,17 +23,14 @@
       </ng-template>
       <ng-template pTemplate="body" let-row>
         <tr>
+          <td>
+            <p-tableCheckbox [value]="row" />
+        </td>
           <td>{{ row.food }}</td>
           <td>{{ row.quantity }}</td>
           <td>{{ row.calories }}</td>
           <td>{{ row.registrationDate | date: 'short' }}</td>
-          <td><p-button [style]="{ width: '20px', height: '8px'}" icon="pi pi-times" [rounded]="true" severity="danger" /></td>
         </tr>
-    
       </ng-template>
     </p-table>
   </div>
-
-  
-
-  

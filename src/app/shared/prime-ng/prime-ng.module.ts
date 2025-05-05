@@ -6,6 +6,10 @@ import { AvatarModule } from 'primeng/avatar';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService, MessageService } from 'primeng/api';
+
 
 
 
@@ -17,8 +21,9 @@ import { CalendarModule } from 'primeng/calendar';
         DialogModule,
         InputTextModule,
         AvatarModule,
-        CalendarModule
-        
+        CalendarModule,
+        ConfirmDialogModule,
+        ToastModule
     ],
     exports: [
         ButtonModule,
@@ -27,10 +32,15 @@ import { CalendarModule } from 'primeng/calendar';
         DialogModule,
         InputTextModule,
         AvatarModule,
-        CalendarModule
+        CalendarModule,
+        ConfirmDialogModule,
+        ToastModule
     ],
     declarations: [
-
+    ],
+    providers: [
+        ConfirmationService,
+        MessageService
     ]
 })
 

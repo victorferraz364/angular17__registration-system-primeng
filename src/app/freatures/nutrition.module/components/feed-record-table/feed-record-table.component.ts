@@ -15,12 +15,18 @@ export class FeedRecordTableComponent implements OnChanges {
 
   initialValue: Meals[] = [];
   sortState: boolean | null = null;
+  selectedMeals: Meals[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['dados']) {
       this.initialValue = [...this.dados];
     }
   }
+
+
+
+
+  // prime ng logic
 
   customSort(event: SortEvent) {
     if (!event.data) return;

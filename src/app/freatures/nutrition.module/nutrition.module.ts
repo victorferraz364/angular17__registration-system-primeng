@@ -7,6 +7,7 @@ import { CommonModule, DatePipe } from "@angular/common";
 import { FeedRecordDialogComponent } from "./components/feed-record-dialog/feed-record-dialog.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ButtonModule } from 'primeng/button';
+import { CoreModule } from "../../core/core.module";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ButtonModule } from 'primeng/button';
         DatePipe,
         CommonModule,
         HttpClientModule,
-        ButtonModule
+        ButtonModule,
+        CoreModule
 
     ],
     declarations:[
