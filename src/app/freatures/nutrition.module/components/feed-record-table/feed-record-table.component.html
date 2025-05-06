@@ -1,8 +1,8 @@
 <div class="card flex justify-content-center">
 
-<delete-button [selectedMeals]="selectedMeals"></delete-button>
+<delete-button  [selectedMeals]="selectedMeals"  (onDelete)="handleDelete($event)">></delete-button>
   
-    <p-table  [(selection)]="selectedMeals"  #dt [value]="dados" [customSort]="true" (sortFunction)="customSort($event)">
+    <p-table  [(selection)]="selectedMeals"  #dt [value]="mealData" [customSort]="true" (sortFunction)="customSort($event)">
       <ng-template pTemplate="header">
         <tr>
           <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
@@ -26,6 +26,7 @@
           <td>
             <p-tableCheckbox [value]="row" />
         </td>
+        <td>{{ row.id }}</td>
           <td>{{ row.food }}</td>
           <td>{{ row.quantity }}</td>
           <td>{{ row.calories }}</td>

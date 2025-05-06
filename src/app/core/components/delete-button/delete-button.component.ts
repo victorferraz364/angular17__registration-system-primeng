@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Meals } from '../../../freatures/nutrition.module/interfaces/IMeals';
+import { NutritionService } from '../../../freatures/nutrition.module/services/nutrition-service.service';
 
 @Component({
   selector: 'delete-button',
@@ -10,13 +11,19 @@ import { Meals } from '../../../freatures/nutrition.module/interfaces/IMeals';
 })
 export class DeleteButtonComponent {
 
-  constructor(private confirmationService: ConfirmationService, private messageService: MessageService) { }
+  constructor(
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService,
+    
+  ) { }
 
   @Input({ required: true }) selectedMeals: Meals[] = [];
 
   isDisabled(): boolean {
     return this.selectedMeals.length === 0;
   }
+
+  @Output() onDelete = new EventEmitter<number[]>();
 
 
   // PRIMENG
@@ -33,6 +40,12 @@ export class DeleteButtonComponent {
 
       accept: () => {
         this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'Record deleted' });
+        const ids = this.selectedMeals
+          .map(meal => meal.id)
+          .filter((id): id is number => id !== undefined);
+          alert(ids)
+
+        this.onDelete.emit(ids);
       },
       reject: () => {
         this.messageService.add({ severity: 'error', summary: 'Rejected', detail: 'You have rejected' });

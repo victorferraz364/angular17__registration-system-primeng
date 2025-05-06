@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@
 import { Meals } from '../../interfaces/IMeals';
 import { Table } from 'primeng/table';
 import { SortEvent } from 'primeng/api';
+import { NutritionService } from '../../services/nutrition-service.service';
 
 @Component({
   selector: 'feed-record-table',
@@ -9,7 +10,9 @@ import { SortEvent } from 'primeng/api';
   styleUrl: './feed-record-table.component.scss'
 })
 export class FeedRecordTableComponent implements OnChanges {
-  
+   
+constructor (private nutritionService: NutritionService) {}
+
   @Input() mealData: Meals[] = [];
   @ViewChild('dt') dt!: Table;
 
@@ -23,7 +26,20 @@ export class FeedRecordTableComponent implements OnChanges {
     }
   }
 
-
+  handleDelete(ids: number[]) {
+    this.nutritionService.deleteMeals(ids).subscribe({
+      next: () => {
+        
+        this.mealData = this.mealData.filter(meal => !ids.includes(meal.id!));
+        this.selectedMeals = [];
+      },
+      error: () => {
+       
+        console.error('Erro ao excluir refeições');
+      }
+    });
+  }
+  
 
 
   // prime ng logic
