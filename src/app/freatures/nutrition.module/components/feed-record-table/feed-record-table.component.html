@@ -1,37 +1,38 @@
 <div class="card flex justify-content-center">
 
-<delete-button  [selectedMeals]="selectedMeals"  (onDelete)="handleDelete($event)">></delete-button>
-  
-    <p-table  [(selection)]="selectedMeals"  #dt [value]="mealData" [customSort]="true" (sortFunction)="customSort($event)">
-      <ng-template pTemplate="header">
-        <tr>
-          <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
-          <th pSortableColumn="food">
-            Alimento <p-sortIcon field="food" />
-          </th>
-          <th pSortableColumn="quantity">
-            Quantidade <p-sortIcon field="quantity" />
-          </th>
-          <th pSortableColumn="calories">
-            Calorias <p-sortIcon field="calories" />
-          </th>
-          <th pSortableColumn="registrationDate">
-            Data/Hora <p-sortIcon field="registrationDate" />
-          </th>
-          
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-row>
-        <tr>
-          <td>
-            <p-tableCheckbox [value]="row" />
+  <delete-button [selectedMeals]="selectedMeals" (onDelete)="handleDelete($event)">></delete-button>
+
+  <p-table #dt [scrollable]="true" scrollHeight="400px" [(selection)]="selectedMeals" [value]="mealData"
+    [customSort]="true" (sortFunction)="customSort($event)">
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
+        <th pSortableColumn="food">
+          Alimento <p-sortIcon field="food" />
+        </th>
+        <th pSortableColumn="quantity">
+          Quantidade <p-sortIcon field="quantity" />
+        </th>
+        <th pSortableColumn="calories">
+          Calorias <p-sortIcon field="calories" />
+        </th>
+        <th pSortableColumn="registrationDate">
+          Data/Hora <p-sortIcon field="registrationDate" />
+        </th>
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-row>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="row" />
         </td>
-        <td>{{ row.id }}</td>
-          <td>{{ row.food }}</td>
-          <td>{{ row.quantity }}</td>
-          <td>{{ row.calories }}</td>
-          <td>{{ row.registrationDate | date: 'short' }}</td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
+        <td>{{ row.food }}</td>
+        <td>{{ row.quantity }}</td>
+        <td>{{ row.calories }}</td>
+        <td>{{ row.registrationDate | date: 'short' }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
